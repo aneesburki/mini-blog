@@ -17,6 +17,14 @@
           "Lucida Sans", Arial, sans-serif;
       }
 
+      /* rgba is sensitive asf too, rgba (value) wouldn't work */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        /* border: red solid 2px; */
+      }
+
       .header {
         margin: 12px;
         padding: 8px;
@@ -31,24 +39,16 @@
         /* border: red solid 2px; */
       }
 
-      .lt-link-hder {
+      .header-left {
         /* border: blue solid 2px; */
       }
 
-      .rt-links-hder {
+      .header-right {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         gap: 30px;
         /* border: blue solid 2px; */
-      }
-
-      /* rgba is sensitive asf too, rgba (value) wouldn't work */
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: rgba(0, 0, 0, 0.1);
-        /* border: red solid 2px; */
       }
 
       .links-header {
@@ -57,7 +57,6 @@
         font-weight: 700;
         text-decoration: none;
         padding: 0.5em;
-        list-style: none;
         cursor: pointer;
         color: dodgerblue;
       }
@@ -66,7 +65,6 @@
       .links-header:hover {
         border-radius: 4px;
         box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
-        padding: 0.5em;
       }
 
       .links-underline:hover{
@@ -79,44 +77,66 @@
       }
 
       .picture-div {
-        text-align: center;
-      }
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* border: red solid 2px; */
+
+    }
 
       .profile-pic {
         width: 250px;
         height: 250px;
         border-radius: 50%;
         /* background-image: url(/300px\ bradahh.png); */
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
         box-shadow: 0px 1px 3px 1px dodgerblue;
+        /* border: blue solid 2px; */
+
       }
 
       .title {
-        text-align: center;
         color: dodgerblue;
+        text-align: center;
         font-size: 50px;
+        /* border: red 2px solid; */
       }
 
       .headings {
         color: dodgerblue;
-        width: 250px;
+        width: 100%;
+        /* border: red solid 2px; */
       }
 
       .box-container {
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        /* text-align: center; */
       }
 
       .box-item {
-        display: inline-block;
-        width: 400px;
+        width: 520px;
+        height: 520px;
         margin: 20px;
         padding: 20px;
         background-color: white;
         border-radius: 10px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
         /* border: red solid 2px; */
+      }
+
+      .hypertext{
+        font-size: 1em;
+        /* Note: 16px = 1em */
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        color: dodgerblue;
+      }
+      .hypertext:hover{
+        text-decoration: underline;
       }
 
       footer {
@@ -149,12 +169,12 @@
   <body>
     <!--Header tag, on the other hand, is a section at the top of the webpage. (Within the webpage, not above the webpage). -->
     <header class="header">
-      <div class="lt-link-hder">
+      <div class="header-left">
         <a href="" class="links-header">Mini Blog</a>
       </div>
 
-      <div class="rt-links-hder">
-        <a href="#skills-tag" class="links-header links-underline">Skills</a>
+      <div class="header-right">
+        <a href="#Tips-tag" class="links-header links-underline">Tips</a>
         <a href="#footer-id-tag" class="links-header links-underline">Me</a>
       </div>
     </header>
@@ -164,14 +184,14 @@
         <div class="picture-div">
           <img src="profile.png" alt="image" class="profile-pic" />
         </div>
-        <h1 class="title">Tips For Web Dev Beginner</h1>
+        <h1 class="title">Tips For a Web Dev Beginner</h1>
       </section>
 
-      <div class="box-container" id="skills-tag">
+      <div class="box-container" id="Tips-tag">
         <div class="box-item">
           <h1 class="headings">Learn Touch Typing</h1>
           <hr />
-          <h2>Reason?</h2>
+          <h2>Reasons</h2>
           <h3 class="small-headings">Speed and Efficiency</h3>
           <p>
             You don’t want to waste time hunting for keys when coding. The
@@ -184,14 +204,14 @@
           </p>
           <h3 class="small-headings">Less Fatigue</h3>
           <p>
-            Typing without extra effort means less strain on your fingers and
+            Typing without extra effort means less stress on your fingers and
             mind.
           </p>
           <h3 class="small-headings">How can i touch type?</h3>
           <p>
             Use free tools like
-            <a href="https://typingclub.com" target="_blank">Typing Club</a> or
-            <a href="https://monkeytype.com" target="_blank">Monkey Type</a> to
+            <a href="https://typingclub.com" target="_blank" class="hypertext">Typing Club</a> or
+            <a href="https://monkeytype.com" target="_blank" class="hypertext">Monkey Type</a> to
             practice. You don’t need to be blazing fast—just comfortable!
           </p>
         </div>
@@ -218,13 +238,12 @@
           </p>
         </div>
 
-        <br />
 
         <div class="box-item">
-          <h1 class="headings">Focus on One Topic at a Time</h1>
+          <h1 class="headings">Focus on One Topic <br> At a Time</h1>
           <hr />
           <h2>Reasons?</h2>
-          <h3 class="small-headings">Avoid Overwhelm</h3>
+          <h3 class="small-headings">Its Less Overwhelming</h3>
           <p>
             Learning too many things at once can be confusing and frustrating.
           </p>
@@ -265,13 +284,10 @@
 
     <footer>
       <h2>Connect with me:</h2>
-      <p><strong>Email:</strong> piratedkode@gmail.com</p>
+      <p><b>Email:</b> piratedkode@gmail.com</p>
       <div class="social-links" id="footer-id-tag">
-        <a href="https://www.facebook.com/people/Informatix/61570962988628/?viewas&show_switched_toast=false&show_switched_tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true"
-          target="_blank"
-          >Facebook</a>
         <a href="" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Blu-kode" target="_blank">GitHub</a>
+        <a href="https://github.com/aneesburki" target="_blank">GitHub</a>
         <a href="https://aneesburki.blogspot.com" target="_blank">Blogspot</a>
       </div>
       <small>&copy; 2025 Blue Kode</small>
