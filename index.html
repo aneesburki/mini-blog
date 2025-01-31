@@ -1,97 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Head and header are two different tags in HTML. "head" Tag is the section, located above a webpage. 
+  <!-- Head and header are two different tags in HTML. "head" Tag is the section, located above a webpage. 
         Which may contain metadata (data about the webpage e.g., style sheet, face font, or font-awesome).
         And display certain things, such as a Title and an icon for the website. -->
-<head>
+
+  <head>
     <title>Mini Blog</title>
-<!--     fav-icon -->
-<link rel="icon" href="blue-cloud.ico">
+    <!--     fav-icon -->
+    <link rel="icon" href="blue-cloud.ico" />
 
+    <!--     style-Tag (for styling the HTML Tags)-->
+    <style>
+      /* Universal Selector : it selects all tags within the website */
+      * {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
 
-<!--     style-Tag (for styling the HTML Tags)-->
-        <style>
-/* Universal Selector : it selects all tags within the website */
-    *{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+      .header {
+        margin: 12px;
+        padding: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        border-radius: 10px;
+        /* box-shadow value is sensitive as hell, it cannot stand a chance to commas. e.g. 0px, 5px, 5px (this wouldn't work) */
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+        /* border: red solid 2px; */
+      }
 
+      .lt-link-hder {
+        /* border: blue solid 2px; */
+      }
 
+      .rt-links-hder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 30px;
+        /* border: blue solid 2px; */
+      }
 
-.header{
-    margin: 12px;
-    padding: 8px;
+      /* rgba is sensitive asf too, rgba (value) wouldn't work */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        /* border: red solid 2px; */
+      }
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    /* box-shadow value is sensitive as hell, it cannot stand a chance to commas. e.g. 0px, 5px, 5px (this wouldn't work) */
-    box-shadow: 0px 0px 8px rgba(0,0,0, 0.2);
-    /* border: red solid 2px; */
+      .links-header {
+        font-size: 1.5em;
+        /* Note: 16px = 1em */
+        font-weight: 700;
+        text-decoration: none;
+        padding: 0.5em;
+        list-style: none;
+        cursor: pointer;
+        color: dodgerblue;
+      }
 
-}
+      /* no compromise in space. eg .li :hover; wouldn't work */
+      .links-header:hover {
+        border-radius: 4px;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+        padding: 0.5em;
+      }
 
-.lt-link-hder{
-    /* border: blue solid 2px; */
-
-}
-
-.rt-links-hder{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 30px;
-    /* border: blue solid 2px; */
-
-}
-
-/* rgba is sensitive asf too, rgba (value) wouldn't work */
-body{
-    margin: 0;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    /* border: red solid 2px; */
-
-}
-
-li{
-    list-style: none;
-    font-weight: bold;
-
-}
-
-.links{
-    font-size: 1.5em;        /* Note: 16px = 1em */
-    font-weight: 700;
-    text-decoration: none;
-    padding: 0.5em;
-    list-style: none;
-    cursor: pointer;
-    color: dodgerblue;
-}
-
-/* no compromise in space. eg .li :hover; wouldn't work */
-.links:hover{
-border-radius: 4px;
-box-shadow: 0px 0px 2px 2px rgba(0,0,0, 0.2);
-padding: 0.5em;
-
-}
-
-    .picture-section{
+      .links-underline:hover{
+        text-decoration: underline;
+      }
+      .picture-section {
         display: flex;
         flex-direction: column;
         gap: 10px;
-    }
-    
-    .picture-div{
-        text-align: center;
-    }
+      }
 
-    .profile-pic{
+      .picture-div {
+        text-align: center;
+      }
+
+      .profile-pic {
         width: 250px;
         height: 250px;
         border-radius: 50%;
@@ -100,186 +91,190 @@ padding: 0.5em;
         margin-left: auto;
         margin-right: auto;
         box-shadow: 0px 1px 3px 1px dodgerblue;
-    }
-    
-    .title{
+      }
+
+      .title {
         text-align: center;
         color: dodgerblue;
-        font-size: 50px;    
-    }
-    
+        font-size: 50px;
+      }
 
-    .headings{
+      .headings {
         color: dodgerblue;
         width: 250px;
-    }
-    
+      }
 
+      .box-container {
+        text-align: center;
+      }
 
-
-    .box-container{
-    text-align: center;
-    }
-
-    
-    .box-item{
+      .box-item {
         display: inline-block;
         width: 400px;
         margin: 20px;
         padding: 20px;
         background-color: white;
         border-radius: 10px;
-        box-shadow: 0px 4px 8px rgba(0,0,0, 0.4);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
         /* border: red solid 2px; */
-    }
+      }
 
+      footer {
+        margin: 12px;
+        padding: 8px;
+        border-radius: 10px;
+        background-color: white;
+        color: rgb(74, 71, 71);
+        text-align: center;
+        /* margin-top: 40px; (Used this instead of flex-box - gap)*/
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+        /* border: red solid 2px; */
+      }
 
+      footer .social-links a {
+        color: dodgerblue;
+        text-decoration: none;
+        padding-right: 10px;
+        font-size: 18px;
+        /* border: green solid 2px; */
+      }
 
+      footer .social-links a:hover {
+        text-decoration: underline;
+        /* border: blue solid 2px; */
+      }
+    </style>
+  </head>
 
-    
-    footer {
-                margin: 12px;
-                padding: 8px;
-                border-radius: 10px;
-                background-color: white;
-                color: rgb(74, 71, 71);
-                text-align: center;
-                /* margin-top: 40px; (Used this instead of flex-box - gap)*/
-                box-shadow: 0px 0px 8px rgba(0,0,0, 0.2);
-                /* border: red solid 2px; */
-
-            }
-    
-    
-    
-            footer .social-links a {
-                color: dodgerblue;
-                text-decoration: none;
-                padding-right: 10px;
-                font-size: 18px;
-                /* border: green solid 2px; */
-
-            }
-    
-            footer .social-links a:hover {
-                text-decoration: underline;
-                /* border: blue solid 2px; */
-
-            }
-    
-
-</style>
-
-</head>
-    
-<body>
+  <body>
     <!--Header tag, on the other hand, is a section at the top of the webpage. (Within the webpage, not above the webpage). -->
     <header class="header">
+      <div class="lt-link-hder">
+        <a href="" class="links-header">Mini Blog</a>
+      </div>
 
-        <div class="lt-link-hder">
-            <a href="" class="links">Mini Blog</a>
-        </div>
-
-        <div class="rt-links-hder">
-            <a href="#resume" class="links">Skills</a>
-            <a href="#footer-id-tag" class="links">Me</a>
-        </div>
-
+      <div class="rt-links-hder">
+        <a href="#skills-tag" class="links-header links-underline">Skills</a>
+        <a href="#footer-id-tag" class="links-header links-underline">Me</a>
+      </div>
     </header>
 
-<main class="main">
+    <main class="main">
+      <section class="picture-section">
+        <div class="picture-div">
+          <img src="profile.png" alt="image" class="profile-pic" />
+        </div>
+        <h1 class="title">Tips For Web Dev Beginner</h1>
+      </section>
 
-<section class="picture-section">
-    <div class="picture-div">
-        <img src="profile.png" alt="image" class="profile-pic">
-    </div>
-    <h1 class="title">Tips For Web Dev Beginner</h1>
-</section>
-
-
-    <div class="box-container" id="skills-tag">
+      <div class="box-container" id="skills-tag">
         <div class="box-item">
-            <h1 class="headings">Touch Typing</h1>
-            <hr>
-            <h2>Why Should I Touch Type?</h2>
-            <h3 class="small-headings">Speed and Efficiency</h3>
-            <p>You don’t want to waste time hunting for keys when coding. The faster you type, the faster you can write and debug.</p>
-            <h3 class="small-headings">Better Focus</h3>
-            <p>If you don’t have to look at your keyboard, you can keep your eyes on the screen and think about the code instead.</p>
-            <h3 class="small-headings">Less Fatigue</h3>
-            <p>Typing without extra effort means less strain on your fingers and mind.</p>
-            <h3 class="small-headings">How can i touch type?</h3>
-            <p>Use free tools like <a href="https://typingclub.com" target="_blank">Typing Club</a> or <a href="https://monkeytype.com" target="_blank">Monkey Type</a> to practice. You don’t need to be blazing fast—just comfortable!</p>
-
+          <h1 class="headings">Learn Touch Typing</h1>
+          <hr />
+          <h2>Reason?</h2>
+          <h3 class="small-headings">Speed and Efficiency</h3>
+          <p>
+            You don’t want to waste time hunting for keys when coding. The
+            faster you type, the faster you can write and debug.
+          </p>
+          <h3 class="small-headings">Better Focus</h3>
+          <p>
+            If you don’t have to look at your keyboard, you can keep your eyes
+            on the screen and think about the code instead.
+          </p>
+          <h3 class="small-headings">Less Fatigue</h3>
+          <p>
+            Typing without extra effort means less strain on your fingers and
+            mind.
+          </p>
+          <h3 class="small-headings">How can i touch type?</h3>
+          <p>
+            Use free tools like
+            <a href="https://typingclub.com" target="_blank">Typing Club</a> or
+            <a href="https://monkeytype.com" target="_blank">Monkey Type</a> to
+            practice. You don’t need to be blazing fast—just comfortable!
+          </p>
         </div>
 
         <div class="box-item">
-            <h1 class="headings">Mindset</h1>
-            <hr>
-            <h2>Why Should I Touch Type?</h2>
-            <h3 class="small-headings">Problem Solving Approach</h3>
-            <p>Coding is basically solving problems. A positive, patient mindset helps you push through tough challenges.</p>
-            <h3 class="small-headings">Growth Mindset</h3>
-            <p>You will make mistakes. A lot. Instead of getting frustrated, see them as learning opportunities.</p>
-            <h3 class="small-headings">Stay Curious</h3>
-            <p>Stay curious: Ask why code works (or doesn’t).</p>
-            <h3 class="small-headings">Patience > Talent: </h3>
-            <p>It’s not about being “smart”; it’s about being stubborn enough to keep trying.</p>
-
+          <h1 class="headings">Build Mindset</h1>
+          <hr />
+          <h3 class="small-headings">Problem Solving Approach</h3>
+          <p>
+            Coding is basically solving problems. An improved positive mindset
+            helps you push through tough challenges.
+          </p>
+          <h3 class="small-headings">Growth Mindset</h3>
+          <p>
+            You will make mistakes. A lot. Instead of getting frustrated, see
+            them as learning opportunities.
+          </p>
+          <h3 class="small-headings">Stay Curious</h3>
+          <p>Ask why code works (or doesn’t).</p>
+          <h3 class="small-headings">Patience > Talent:</h3>
+          <p>
+            It’s not about being “smart”; it’s about being stubborn enough to
+            keep trying.
+          </p>
         </div>
 
-<br>
+        <br />
 
         <div class="box-item">
-            <h1 class="headings">Focus on One Topic at a Time</h1>
-            <hr>
-            <h2>Reasons?</h2>
-            <h3 class="small-headings">Avoid Overwhelm</h3>
-            <p>Learning too many things at once can be confusing and frustrating.</p>
-            <h3 class="small-headings">Better Retention</h3>
-            <p>Mastering one concept before moving on helps you truly understand it.</p>
-            <h3 class="small-headings">Confidence Boost</h3>
-            <p>Small wins keep you motivated, and focusing on one thing at a time helps you get those wins.</p>
-
-
-
+          <h1 class="headings">Focus on One Topic at a Time</h1>
+          <hr />
+          <h2>Reasons?</h2>
+          <h3 class="small-headings">Avoid Overwhelm</h3>
+          <p>
+            Learning too many things at once can be confusing and frustrating.
+          </p>
+          <h3 class="small-headings">Better Retention</h3>
+          <p>
+            Mastering one concept before moving on helps you truly understand
+            it.
+          </p>
+          <h3 class="small-headings">Confidence Boost</h3>
+          <p>
+            Small wins keep you motivated, and focusing on one thing at a time
+            helps you get those wins.
+          </p>
         </div>
         <div class="box-item">
-            <h1 class="headings">Other Skills</h1>
-            <hr>
-            <h3 class="small-headings">Knowing How to Google</h3>
-            <p>Being good at searching for solutions online is an underrated but super important skill.</p>
-            <h3 class="small-headings">Writing Clean, Readable Code</h3>
-            <p>Code should be understandable, not just to computers but also to other humans too XD.</p>
-            <h3 class="small-headings">Consistency is Key</h3>
-            <p>Programming isn’t something you master overnight. Regular practice makes a huge difference.</p>
-
+          <h1 class="headings">Other Skills</h1>
+          <hr />
+          <h3 class="small-headings">Knowing How to Google</h3>
+          <p>
+            Being good at searching for solutions online is an underrated but
+            super important skill.
+          </p>
+          <h3 class="small-headings">Writing Clean, Readable Code</h3>
+          <p>
+            Code should be understandable, not just to computers but also to
+            other humans too XD.
+          </p>
+          <h3 class="small-headings">Consistency is Key</h3>
+          <p>
+            Programming isn’t something you master overnight. Regular practice
+            makes a huge difference.
+          </p>
         </div>
 
+      </div>
 
+    </main>
 
-    </div>
-    
-
-</main>
-
-<footer>
-    <h2>Connect with me:</h2>
-    <p><strong>Email:</strong> piratedkode@gmail.com</p>
-    <div class="social-links" id="footer-id-tag">
-        <a href="https://www.facebook.com/people/Informatix/61570962988628/?viewas&show_switched_toast=false&show_switched_tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true" target="_blank">Facebook</a>
+    <footer>
+      <h2>Connect with me:</h2>
+      <p><strong>Email:</strong> piratedkode@gmail.com</p>
+      <div class="social-links" id="footer-id-tag">
+        <a href="https://www.facebook.com/people/Informatix/61570962988628/?viewas&show_switched_toast=false&show_switched_tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true"
+          target="_blank"
+          >Facebook</a>
         <a href="" target="_blank">LinkedIn</a>
         <a href="https://github.com/Blu-kode" target="_blank">GitHub</a>
         <a href="https://aneesburki.blogspot.com" target="_blank">Blogspot</a>
-       
-
-
-    </div>
-    <small>&copy; 2025 Blue Kode</small>
-</footer>
-
-</body>
+      </div>
+      <small>&copy; 2025 Blue Kode</small>
+    </footer>
+  </body>
 </html>
-
-
-
