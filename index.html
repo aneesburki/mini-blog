@@ -25,6 +25,8 @@
         /* border: red solid 2px; */
       }
 
+
+
       .header {
         margin: 12px;
         padding: 8px;
@@ -85,8 +87,8 @@
     }
 
       .profile-pic {
-        width: 250px;
-        height: 250px;
+        max-width: 300px;
+        max-height: 300px;
         border-radius: 50%;
         /* background-image: url(/300px\ bradahh.png); */
         box-shadow: 0px 1px 3px 1px dodgerblue;
@@ -112,20 +114,34 @@
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        width: 100vw;
 
-        /* text-align: center; */
       }
 
       .box-item {
-        width: 520px;
-        height: 520px;
-        margin: 20px;
-        padding: 20px;
+        width: 500px;
+        margin: 16px;
+        padding: 16px;
         background-color: white;
-        border-radius: 10px;
+        border-radius: 8px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
         /* border: red solid 2px; */
       }
+
+      @media screen and (max-width: 1200px) {
+        .box-item {
+          width: 430px;
+          /* background-color: black; */
+        }
+      }
+      @media screen and (max-width: 1000px){
+        .box-item{
+          width: 70%;
+          height: 500px;
+
+        }
+      }
+
 
       .hypertext{
         font-size: 1em;
@@ -182,7 +198,7 @@
     <main class="main">
       <section class="picture-section">
         <div class="picture-div">
-          <img src="profile.png" alt="image" class="profile-pic" />
+          <img src="profile.png" alt="profile picture" class="profile-pic" />
         </div>
         <h1 class="title">Tips For a Web Dev Beginner</h1>
       </section>
